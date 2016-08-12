@@ -1,8 +1,8 @@
-package com.adanac.commclient.solr.intf;
+package com.adanac.commonclient.solr.intf;
 
 import java.util.Map;
 
-import com.adanac.commclient.solr.dto.SolrGoodsDto;
+import com.adanac.commonclient.solr.dto.SolrGoodsDto;
 import com.adanac.framework.page.Pager;
 import com.adanac.framework.page.PagerParam;
 

@@ -1,4 +1,4 @@
-package com.adanac.commclient.solr;
+package com.adanac.commonclient.solr;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -17,12 +17,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.InitializingBean;
 
-import com.adanac.commclient.constant.AnchoredTypeEnum;
-import com.adanac.commclient.constant.SkuStatusEnum;
-import com.adanac.commclient.solr.dto.SolrGoodsDto;
-import com.adanac.commclient.solr.intf.SolrGoodsSearchService;
-import com.adanac.commclient.utils.EscapeUtil;
-import com.adanac.commclient.utils.UrlBuilder;
+import com.adanac.commonclient.constant.AnchoredTypeEnum;
+import com.adanac.commonclient.constant.SkuStatusEnum;
+import com.adanac.commonclient.solr.dto.SolrGoodsDto;
+import com.adanac.commonclient.solr.intf.SolrGoodsSearchService;
+import com.adanac.commonclient.utils.EscapeUtil;
+import com.adanac.commonclient.utils.UrlBuilder;
 import com.adanac.framework.exception.SysException;
 import com.adanac.framework.log.MyLogger;
 import com.adanac.framework.log.MyLoggerFactory;
@@ -72,7 +72,7 @@ public class SolrGoodsSearchServiceImpl implements SolrGoodsSearchService, Initi
 			JSONObject jsonObject = JSONObject.parseObject(result);
 			JSONObject responseHead = jsonObject.getJSONObject("responseHeader");
 			String stat = responseHead.getString("status");
-			if (!"0".equals(stat)) {
+			if (!"0".equals(stat)) {// 如果stat = 400,
 				logger.error("query fail stat {}", stat);
 				return pager;
 			}
@@ -291,8 +291,8 @@ public class SolrGoodsSearchServiceImpl implements SolrGoodsSearchService, Initi
 		// httpClientBuilder.build();
 		HttpClient httpClient = new DefaultHttpClient();
 		// CloseableHttpClient httpClient = httpClientBuilder.build();
-		String coreUrl = prop.getProperty("coreUrl");
-
+		// String coreUrl = prop.getProperty("coreUrl");//统一配置的使用
+		String coreUrl = "http://localhost:8983/solr/rage_ciss";
 		logger.info("execute core {}", coreUrl + url);
 		HttpGet httpGet = new HttpGet(coreUrl + url);
 		try {

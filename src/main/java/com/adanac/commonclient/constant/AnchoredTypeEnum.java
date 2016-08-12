@@ -1,4 +1,4 @@
-  package com.adanac.commclient.constant;
+  package com.adanac.commonclient.constant;
 
 /**
  * 

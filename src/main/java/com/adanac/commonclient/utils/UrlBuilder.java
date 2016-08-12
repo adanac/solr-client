@@ -1,4 +1,4 @@
-package com.adanac.commclient.utils;
+package com.adanac.commonclient.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

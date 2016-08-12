@@ -1,4 +1,4 @@
-package com.adanac.commclient.utils;
+package com.adanac.commonclient.utils;
 
 public class EscapeUtil {
 

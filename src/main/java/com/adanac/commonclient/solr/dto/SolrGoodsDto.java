@@ -1,4 +1,4 @@
-package com.adanac.commclient.solr.dto;
+package com.adanac.commonclient.solr.dto;
 
 import java.util.List;
 
